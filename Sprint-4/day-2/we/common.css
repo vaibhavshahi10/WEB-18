@@ -10,3 +10,43 @@ a{
     text-decoration: none;
     color: white;
 }
+h1{
+    text-align: center;
+    margin-bottom: 50px; 
+    color: blue;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: repeat(4,auto); */
+    gap: 20px;
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+}
+#container>div{
+    /* border: 1px solid red; */
+    text-align: center;
+    border-radius: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+form{
+    margin: auto;
+    width: 60%;
+}
+img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+p+img{
+    margin-top: -15px;
+    width: 50%;
+}
+p{
+    color: grey;
+    font-size: 20px;
+    margin-top: -15px;
+}
