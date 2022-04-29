@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <h1>masai</h1>
+    <div id="container2">
+        <h2>Sign in</h2>
+        <form id="form">
+            <input id="email" placeholder="email" type="text">
+            <input id="phone" placeholder="phone" type="number">
+            <input id="password" placeholder="password" type="password">
+            <input type="submit" value="log in">
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    var data=JSON.parse(localStorage.getItem("userdetails"));
+    document.querySelector("#form").addEventListener("submit",onclick);
+    function onclick()
+    {
+        event.preventDefault();
+        var obj={
+            email:document.querySelector("#email").value,
+            phone:document.querySelector("#phone").value,
+            password:document.querySelector("#password").value
+        }
+       data.forEach(function(el){
+          if(data==[])
+          {
+              alert("please create an account");
+          }
+          else if(obj.email==el.email && obj.phone==el.phone && obj.password==el.password)
+          {
+              alert("login successful");
+            //   window.location.href="signin.html";
+          }
+          else
+          {
+              alert("wrong data");
+          }
+       })
+    }
+</script>

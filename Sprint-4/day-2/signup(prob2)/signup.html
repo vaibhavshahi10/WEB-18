@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <h1>masai</h1>
+    <div id="container">
+        <h2>Sign up</h2>
+        <form id="form">
+            <input id="email" placeholder="email" type="text">
+            <input id="phone" placeholder="phone" type="number">
+            <input id="password" placeholder="password" type="password">
+            <input type="submit" value="Sign up">
+        </form>
+        <p>already have an account?</p>
+        <button><a href="signin.html">login</a></button>
+    </div>
+</body>
+</html>
+<script>
+    var arr= JSON.parse(localStorage.getItem("userdetails")) || [];
+    
+    document.querySelector("#form").addEventListener("submit",onclick);
+    function onclick()
+    {
+        event.preventDefault();
+        var obj={
+            email:document.querySelector("#email").value,
+            phone:document.querySelector("#phone").value,
+            password:document.querySelector("#password").value,
+        }
+        arr.push(obj);
+        localStorage.setItem("userdetails",JSON.stringify(arr));
+        alert("signed up successfully");
+        window.location.href="signin.html";
+
+    }
+</script>
