@@ -23,6 +23,7 @@
 
 <script>
     var data=JSON.parse(localStorage.getItem("userdetails"));
+    var marker=false;
     document.querySelector("#form").addEventListener("submit",onclick);
     function onclick()
     {
@@ -40,12 +41,15 @@
           else if(obj.email==el.email && obj.phone==el.phone && obj.password==el.password)
           {
               alert("login successful");
+              marker=true;
             //   window.location.href="signin.html";
           }
-          else
-          {
-              alert("wrong data");
-          }
+         
        })
+
+       if(marker==false)
+       {
+           alert("wrong data");
+       }
     }
 </script>
